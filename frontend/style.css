@@ -1,0 +1,64 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  padding: 40px 16px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 40px;
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.description {
+  font-size: 1rem;
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+.skills {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.skills li {
+  background-color: #e8f0fe;
+  color: #1a56db;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+.link {
+  display: inline-block;
+  color: #1a56db;
+  text-decoration: none;
+  border-bottom: 1px solid #1a56db;
+}
+
+.link:hover {
+  opacity: 0.7;
+}
