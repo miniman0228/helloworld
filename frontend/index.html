@@ -14,6 +14,10 @@
       <ul class="skills">
         <li v-for="skill in skills" :key="skill">{{ skill }}</li>
       </ul>
+      <div class="add-skill">
+        <input v-model="newSkill" placeholder="输入新技能" />
+        <button @click="addSkill">添加</button>
+      </div>
       <a class="link" :href="link" target="_blank">访问我的 GitHub</a>
     </div>
   </div>

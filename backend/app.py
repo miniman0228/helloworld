@@ -29,5 +29,12 @@ data = {
 def on_connect():
     emit("user_data", data)
 
+@socketio.on("add_skill")
+def handle_add_skill(payload):
+    skill = payload.get("skill", "").strip()
+    if skill:
+        data["skills"].append(skill)
+        emit("update_skills", {"skills": data["skills"]}, broadcast=True)
+
 if __name__ == "__main__":
     socketio.run(app, port=5000, debug=True)

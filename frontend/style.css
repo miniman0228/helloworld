@@ -41,7 +41,7 @@ body {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 }
 
 .skills li {
@@ -50,6 +50,34 @@ body {
   padding: 4px 14px;
   border-radius: 20px;
   font-size: 0.9rem;
+}
+
+.add-skill {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.add-skill input {
+  flex: 1;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.add-skill button {
+  padding: 6px 16px;
+  background-color: #1a56db;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.add-skill button:hover {
+  background-color: #1446b8;
 }
 
 .link {
