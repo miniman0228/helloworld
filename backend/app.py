@@ -20,19 +20,18 @@ def static_files(filename):
 data = {
     "name": "Simon",
     "title": "游戏开发者",
-    "description": "这是我的个人网站",
     "skills": ["C#", "Unity", "HTML"],
     "link": "https://github.com/"
 }
 
 @socketio.on("connect")
 def on_connect():
-    emit("user_data", data)
+    emit("init_data", data)
 
 @socketio.on("add_skill")
 def handle_add_skill(payload):
     skill = payload.get("skill", "").strip()
-    if skill:
+    if skill and skill not in data["skills"]:
         data["skills"].append(skill)
         emit("update_skills", {"skills": data["skills"]}, broadcast=True)
 

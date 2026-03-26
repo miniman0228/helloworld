@@ -3,11 +3,12 @@ const { createApp } = Vue;
 createApp({
   data() {
     return {
-      name: "",
-      title: "",
-      description: "",
-      skills: [],
-      link: "",
+      profile: {
+        name: "",
+        title: "",
+        skills: [],
+        link: ""
+      },
       newSkill: ""
     };
   },
@@ -15,16 +16,12 @@ createApp({
     const socket = io("http://localhost:5000");
     this._socket = socket;
 
-    socket.on("user_data", (data) => {
-      this.name = data.name;
-      this.title = data.title;
-      this.description = data.description;
-      this.skills = data.skills;
-      this.link = data.link;
+    socket.on("init_data", (data) => {
+      this.profile = data;
     });
 
     socket.on("update_skills", (data) => {
-      this.skills = data.skills;
+      this.profile.skills = data.skills;
     });
   },
   methods: {
